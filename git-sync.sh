@@ -15,7 +15,7 @@ echo "== Поиск файлов > 90MB =="
 BIG_FILES=()
 while IFS= read -r line; do
   BIG_FILES+=("$line")
-done < <(find . \
+done <(find . \
   -path './.git' -prune -o \
   -type f -size +90M \
   ! -name '*.part_*' \
